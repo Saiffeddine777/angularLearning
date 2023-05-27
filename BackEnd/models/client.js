@@ -15,4 +15,9 @@ const fintAllClients = async function(){
     return results
 }
 
-module.exports={createClient,fintAllClients}
+const deleteClient= async function(id){
+    const results = await Client.destroy({where:{id:id}})
+    return results
+}
+
+module.exports={createClient,fintAllClients,deleteClient}

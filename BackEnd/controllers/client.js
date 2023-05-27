@@ -1,4 +1,4 @@
-const { createClient, fintAllClients } = require("../models/client");
+const { createClient, fintAllClients, deleteClient } = require("../models/client");
 
 const makeAClient = function(req,res){
      const {firstName,lastName,phoneNumber,email} = req.body
@@ -25,4 +25,17 @@ const getAllClients = function(req,res){
     })
 }
 
-module.exports={makeAClient,getAllClients}
+const deleteOneClient=function(req,res){
+    const{id}= req.params
+    deleteClient(id)
+    .then(results=>{
+        console.log(results)
+        res.status(200).json(results)
+    })
+    .catch(err=>{
+        console.log(err)
+        res.status(500).json(err)
+    })
+}
+
+module.exports={makeAClient,getAllClients,deleteOneClient}
