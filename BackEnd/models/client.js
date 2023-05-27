@@ -7,6 +7,12 @@ const createClient= async function(firstName,lastName,phoneNumber,email){
       phoneNumber:phoneNumber,
       email:email
    })
+   return client
 }
 
-module.exports={createClient}
+const fintAllClients = async function(){
+    const results = await Client.findAll()
+    return results
+}
+
+module.exports={createClient,fintAllClients}
