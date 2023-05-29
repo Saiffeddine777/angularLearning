@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Firstangularapp';
+  title = 'Go Gym';
+  description ="this application dedicated to the local gym in my hood"
+
+
+  lionel(){
+    return "lionel"
+  }
 }
