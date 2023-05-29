@@ -20,4 +20,16 @@ const deleteClient= async function(id){
     return results
 }
 
-module.exports={createClient,fintAllClients,deleteClient}
+const updateClientEmail = async function(id,email){
+    const results = await Client.findOne({where:{id:id}})
+    results.email = email
+    return  await results.save()
+}
+
+const findOneClient = async function(id){
+   const results = await Client.findOne({where:{id:id}})
+   return results
+}
+
+
+module.exports={createClient,fintAllClients,deleteClient,updateClientEmail,findOneClient}

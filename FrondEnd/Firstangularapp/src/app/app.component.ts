@@ -8,8 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Go Gym';
   description ="this application dedicated to the local gym in my hood"
-
-
+  
   lionel(){
     return "lionel"
   }
