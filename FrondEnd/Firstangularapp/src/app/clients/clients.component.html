@@ -1,0 +1,15 @@
+<p>List of Clients</p>
+<div class="clientDiv" *ngFor="let i of clients" style="border: 1px solid black;">
+  <h1>{{ i.firstName }}-{{ i.lastName }}</h1>
+  <p>{{ i.email }}</p>
+  <p>{{ i.phoneNumber }}</p>
+  <button (click)= 'handleToggle()'>take action</button>
+  <div [style.display]= "toggle ? 'block' :'none'">
+  <button (click)="handleUpdateToggle()">Update</button>
+  <div [style.display]="updateToggle? 'block':'none'">
+      <input type="text" placeholder="new Email" [formControl]="newEmail"/>
+       <button (click)="handleUpdate(i.id,newEmail.value)">Change Email</button>
+  </div>
+  <button (click)="handleDelete(i.id)">delete</button>
+  </div>
+</div>

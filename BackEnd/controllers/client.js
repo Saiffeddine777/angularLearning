@@ -14,7 +14,7 @@ const makeAClient = function(req,res){
 }
 
 const getAllClients = function(req,res){
-    findOneClient()
+    fintAllClients()
     .then(results=>{
         console.log(results)
         res.status(200).json(results)

@@ -1,11 +1,12 @@
 <div>
 <p>Create you Client here</p>
-<label for>First Name:</label>
-<input type ="text" placeholder ="first name"/>
-<label for>Last Name:</label>
-<input type ="text" placeholder ="last name"/>
-<label for>Email :</label>
-<input type ="text" placeholder ="email"/>
-<label for>Phone Number:</label>
-<input type ="number" placeholder ="Phone Number"/>
+<label for ="firstName">First Name:</label>
+<input type ="text" placeholder ="first name"  name ="firstName" [formControl] = "firstName"  /><br/>
+<label for ="lastName">Last Name:</label>
+<input type ="text" placeholder ="last name" [formControl]="lastName"  name="lastName"/><br/>
+<label for ="email">Email :</label>
+<input type ="text" placeholder ="email" name="email" [formControl]="email" /><br/>
+<label for ="phoneNumber">Phone Number :</label>
+<input type ="number" placeholder ="Phone Number" name ="phoneNumber" [formControl]="phoneNumber" /><br/>
+<button type="button" (click)="handleCreateClient()">add Client</button>
 </div>
